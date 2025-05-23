@@ -1,8 +1,7 @@
 {
   "name": "stripe-localstack",
-  "build": {
-    "dockerfile": "./Dockerfile"
-  },
+  "dockerComposeFile": "compose.yaml",
+  "service": "app",
   "customizations": {
     "jetbrains" : {
       "backend" : "WebStorm",

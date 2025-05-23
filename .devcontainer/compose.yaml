@@ -1,0 +1,15 @@
+services:
+  app:
+    build:
+      context: ./app
+      dockerfile: Dockerfile
+    command: sleep infinity
+  localstack:
+    image: localstack/localstack
+    ports:
+      - "127.0.0.1:4566:4566"
+      - "127.0.0.1:4510-4559:4510-4559"
+    environment:
+      - SERVICES=sqs
+    volumes:
+      - ./localstack:/docker-entrypoint-initaws.d
