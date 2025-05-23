@@ -1,4 +1,14 @@
 {
   "name": "stripe-localstack",
-  "image": "mcr.microsoft.com/devcontainers/base:bookworm"
+  "build": {
+    "dockerfile": "./Dockerfile"
+  },
+  "customizations": {
+    "jetbrains" : {
+      "backend" : "WebStorm"
+    },
+    "plugins": [
+      "deno"
+    ]
+  }
 }
