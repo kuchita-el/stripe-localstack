@@ -5,10 +5,10 @@
   },
   "customizations": {
     "jetbrains" : {
-      "backend" : "WebStorm"
-    },
-    "plugins": [
-      "deno"
-    ]
+      "backend" : "WebStorm",
+      "plugins": [
+        "deno"
+      ]
+    }
   }
 }
