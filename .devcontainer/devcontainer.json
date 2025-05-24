@@ -5,13 +5,20 @@
   "workspaceFolder": "/workspaces/stripe-localstack",
   "features": {
     "ghcr.io/devcontainers/features/git": {},
-    "ghcr.io/devcontainers/features/github-cli": {}
+    "ghcr.io/devcontainers/features/github-cli": {},
+    "ghcr.io/devcontainers/features/docker-outside-of-docker": {}
   },
   "customizations": {
     "jetbrains": {
       "backend": "WebStorm",
       "plugins": [
         "deno"
+      ]
+    },
+    "vscode": {
+      "extensions": [
+        "ms-azuretools.vscode-containers",
+        "-ms-azuretools.vscode-docker"
       ]
     }
   },
