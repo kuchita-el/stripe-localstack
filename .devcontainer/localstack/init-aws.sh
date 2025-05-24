@@ -5,6 +5,7 @@ echo "Setting up SQS queue..."
 # Create the SQS queue
 awslocal sqs create-queue \
   --queue-name stripe-events-queue \
+  --endpoint-url http://localstack:4566 \
   --attributes '{
     "DelaySeconds": "0",
     "MessageRetentionPeriod": "86400",

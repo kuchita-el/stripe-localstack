@@ -6,9 +6,6 @@ services:
     command: sleep infinity
   localstack:
     build: ./localstack
-    ports:
-      - "127.0.0.1:4566:4566"
-      - "127.0.0.1:4510-4559:4510-4559"
     environment:
       - SERVICES=sqs
       - DEBUG=1
@@ -17,5 +14,9 @@ services:
     volumes:
       - localstack-data:/var/lib/localstack
       - /var/run/docker.sock:/var/run/docker.sock
+  stripe-cli:
+    image: stripe/stripe-cli:latest
+    entrypoint: stripe listen --forward-to http://localstack:4566/000000000000/stripe-events-queue
+    env_file: ./.env
 volumes:
   localstack-data:
