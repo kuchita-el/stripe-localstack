@@ -2,9 +2,10 @@
   "name": "stripe-localstack",
   "dockerComposeFile": "compose.yaml",
   "service": "app",
+  "workspaceFolder": "/workspaces/stripe-localstack",
   "features": {
     "ghcr.io/devcontainers/features/git": {},
-    "ghcr.io/devcontainers/features/github-cli": {},
+    "ghcr.io/devcontainers/features/github-cli": {}
   },
   "customizations": {
     "jetbrains": {
@@ -13,5 +14,6 @@
         "deno"
       ]
     }
-  }
+  },
+  "remoteUser": "node"
 }
