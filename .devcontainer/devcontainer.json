@@ -2,13 +2,13 @@
   "name": "stripe-localstack",
   "dockerComposeFile": "compose.yaml",
   "service": "app",
-  features: {
-    "ghcr.io/devcontainers/features/git" : {},
-    "ghcr.io/devcontainers/features/github-cli" : {},
+  "features": {
+    "ghcr.io/devcontainers/features/git": {},
+    "ghcr.io/devcontainers/features/github-cli": {},
   },
   "customizations": {
-    "jetbrains" : {
-      "backend" : "WebStorm",
+    "jetbrains": {
+      "backend": "WebStorm",
       "plugins": [
         "deno"
       ]
