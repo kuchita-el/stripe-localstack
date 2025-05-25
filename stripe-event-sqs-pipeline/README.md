@@ -20,14 +20,14 @@ StripeのWebhookとSQSとの間でリクエストの形式に互換性がない�
 
 ### 実行コマンド
 
-```sh
-deno run \
-    --allow-net \
-    --allow-env \
-    --allow-read \
-    --allow-sys \
-    main.ts
-```
+- 実行
+  ```sh
+  deno run start
+  ```
+- 開発者モード（--watch）
+  ```sh
+  deno run dev
+  ```
 
 デフォルトでは、[http://localhost:8000]に公開される。
 
@@ -52,3 +52,6 @@ CLIをインストールすると、Stripe CLIを利用できる。
 
 - [Deno](https://docs.deno.com/runtime/)
 - [aws-cli/client-sqs](https://docs.aws.amazon.com/AWSJavaScriptSDK/v3/latest/client/sqs/)
+- Stripe CLI
+  - [Stripe Docs](https://docs.stripe.com/stripe-cli/overview)
+  - [Stripe CLI Reference](https://docs.stripe.com/cli)
