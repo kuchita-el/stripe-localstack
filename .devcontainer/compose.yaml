@@ -4,6 +4,12 @@ services:
       context: ./app
       dockerfile: Dockerfile
     command: sleep infinity
+    environment:
+      - AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID}
+      - AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY}
+      - AWS_REGION=${AWS_REGION}
+      - AWS_ENDPOINT_URL=${AWS_ENDPOINT_URL}
+      - AWS_SQS_STRIPE_EVENTS_QUEUE_QUEUE_URL=${AWS_SQS_STRIPE_EVENTS_QUEUE_QUEUE_URL}
   localstack:
     build: ./localstack
     environment:
@@ -19,7 +25,8 @@ services:
       - /var/run/docker.sock:/var/run/docker.sock
   stripe-cli:
     image: stripe/stripe-cli:latest
-    entrypoint: stripe listen --forward-to http://localstack:4566/000000000000/stripe-events-queue
-    env_file: ./.env
+    entrypoint: stripe listen --forward-to http://app:8000
+    environment:
+      - STRIPE_API_KEY=${STRIPE_API_KEY}
 volumes:
   localstack-data:
