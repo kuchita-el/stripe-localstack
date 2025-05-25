@@ -6,16 +6,16 @@ VSCodeのDevContainer 機能を活用し、コンテナボリュームに直接 
 
 ## 特長
 
-- Stripe API のモック環境をローカルで構築
 - AWS SQSのモック環境をLocalStackで構築
-- DevContainer による一貫した開発環境
+- StripeのWebhookイベントをLocalStackのSQSにメッセージとして送信
+- DevContainerで簡単に開発できる
 
 ## 前提条件
 
-- Stripe
+- Stripeアカウント
 - Docker
 - VSCode
-- VSCode 拡張機能: Remote - Containers または Dev Containers
+  - 拡張機能: Dev Containers
 
 ## アーキテクチャ
 
@@ -54,5 +54,15 @@ Stripe: Webhookでローカルリスナーにイベントを通知
 ## 使い方
 
 - 実行コマンドは[./stripe-event-sqs-pipeline/README.md]()を参照してください。
-- `stripe`コマンド（Stripe CLI）は`stripe-cli`サービスを実行しているコンテナのシェルから利用できます。
-    
+- `stripe`コマンド（Stripe
+  CLI）は`stripe-cli`サービスを実行しているコンテナのシェルから利用できます。
+
+## 利用ツール
+
+- [LocalStack](https://docs.localstack.cloud/overview/)
+  - [LocalStack AWS SQS](https://docs.localstack.cloud/user-guide/aws/sqs/)
+- [Deno](https://docs.deno.com/runtime/)
+- [aws-cli/client-sqs](https://docs.aws.amazon.com/AWSJavaScriptSDK/v3/latest/client/sqs/)
+- Stripe CLI
+  - [Stripe Docs](https://docs.stripe.com/stripe-cli/overview)
+  - [Stripe CLI Reference](https://docs.stripe.com/cli)
